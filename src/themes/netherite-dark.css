@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono&display=swap');
+
+:root {
+  --bg: #0c0c0c;
+  --panel: #1a1a1a;
+  --accent: #ff3c1b;
+  --text: #eeeeee;
+  --secondary: #aaaaaa;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--panel);
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1px solid var(--accent);
+}
+
+.logo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+.actions button {
+  background: var(--accent);
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.actions button:hover {
+  background: #ff5733;
+}
+
+.editor-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: var(--panel);
+  padding: 1rem;
+  border-right: 1px solid #222;
+  overflow-y: auto;
+}
+
+.sidebar h2 {
+  color: var(--accent);
+}
+
+#notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#notes-list li {
+  padding: 0.5rem;
+  border-bottom: 1px solid #222;
+  cursor: pointer;
+}
+
+#notes-list li:hover {
+  background: rgba(255, 60, 27, 0.1);
+}
+
+.editor {
+  display: flex;
+  flex: 1;
+  background-color: #111;
+}
+
+#markdown-input {
+  flex: 1;
+  width: 50%;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  background: #111;
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  resize: none;
+}
+
+#preview {
+  flex: 1;
+  padding: 1rem;
+  background: #141414;
+  overflow-y: auto;
+  border-left: 1px solid #222;
+}
+
+#preview h1, #preview h2, #preview h3 {
+  color: var(--accent);
+}

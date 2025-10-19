@@ -1,0 +1,26 @@
+/* Smooth fade for all theme-related changes */
+* {
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease,
+    border-color 0.5s ease,
+    box-shadow 0.5s ease,
+    filter 0.4s ease;
+}
+
+/* Lava-like glow effect */
+body.theme-transitioning::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 90, 30, 0.15), transparent 70%);
+  pointer-events: none;
+  animation: forge-glow 0.6s ease-out;
+  z-index: 9999;
+}
+
+@keyframes forge-glow {
+  0% { opacity: 0; transform: scale(0.8); filter: blur(10px); }
+  40% { opacity: 1; transform: scale(1.05); filter: blur(0); }
+  100% { opacity: 0; transform: scale(1); }
+}
